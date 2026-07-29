@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "agentlas.mode-map.v1",
+  "defaultMode": "guided-assurance",
+  "modes": {
+    "guided-assurance": {
+      "entry": "agent.md",
+      "skill": ".agents/skills/sei/SKILL.md",
+      "command": "/sei"
+    }
+  }
+}

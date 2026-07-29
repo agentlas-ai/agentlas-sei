@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "package": "agentlas-sei",
+  "version": "0.3.0",
+  "description": "Local-first interview, user-flow, assurance, and plain-language dashboard agent.",
+  "entrypoints": {
+    "canonical": "AGENTS.md",
+    "agent": "agent.md",
+    "command": "/sei",
+    "terminal": "sei",
+    "installer": "scripts/install.sh",
+    "globalCommands": ".agentlas/global-commands.json"
+  },
+  "publicInstall": {
+    "codexMarketplace": "codex plugin marketplace add https://github.com/agentlas-ai/agentlas-sei.git && codex plugin add agentlas-sei@agentlas-sei",
+    "terminal": "scripts/install.sh https://github.com/agentlas-ai/agentlas-sei.git"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "agentlas-sei",
+  "name": "agentlas-sei",
+  "version": "0.3.0",
+  "description": "Interview, map, inspect, and visualize an existing software project with local-first evidence boundaries.",
+  "author": {"name": "Agentlas"},
+  "license": "Apache-2.0",
+  "keywords": ["software-quality", "user-flow", "technical-debt", "cognitive-debt"],
+  "skills": "skills",
+  "interface": {
+    "displayName": "SEI",
+    "shortDescription": "Interview and inspect a local project, then open an easy local dashboard.",
+    "longDescription": "SEI grounds software assurance in an operator interview, macro/meso/micro user flows, bounded code signals, explicit uncertainty, and a local plain-language dashboard.",
+    "developerName": "Agentlas",
+    "category": "Developer Tools",
+    "capabilities": [
+      "product_intent_interview",
+      "user_flow_mapping",
+      "technical_debt_inspection",
+      "cognitive_debt_inspection",
+      "local_dashboard"
+    ],
+    "defaultPrompt": "Use SEI on the current project. Interview me first if no accepted project intent exists."
+  }
+}

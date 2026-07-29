@@ -1,0 +1,16 @@
+{
+  "name": "agentlas-sei",
+  "interface": {"displayName": "Agentlas SEI"},
+  "plugins": [
+    {
+      "name": "agentlas-sei",
+      "source": {"source": "local", "path": "./plugins/agentlas-sei"},
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL",
+        "products": ["CODEX"]
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

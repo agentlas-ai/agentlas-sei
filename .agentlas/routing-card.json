@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "routing-card/2.0",
+  "card_version": "0.3.0",
+  "revision": 1,
+  "id": "hub/agentlas-sei",
+  "canonical_id": "hub/agentlas-sei",
+  "type": "agent",
+  "name": "SEI",
+  "name_ko": "제품 무결성 점검 에이전트",
+  "summary": "Interview an existing software project, map user flows, find risk candidates, and open a plain-language local dashboard.",
+  "summary_ko": "기존 프로젝트를 인터뷰하고 사용자 흐름과 위험 후보를 쉬운 로컬 화면으로 보여줍니다.",
+  "capabilities": [
+    "interview_product_intent",
+    "map_user_flows",
+    "inspect_code_risks",
+    "visualize_assurance_state",
+    "gate_risky_changes"
+  ],
+  "domains": ["software_quality"],
+  "trigger_examples": [
+    {"locale": "ko", "text": "이 프로젝트에 SEI를 설치하고 인터뷰부터 시작해줘"},
+    {"locale": "ko", "text": "코드 버그뿐 아니라 사용자 흐름과 인지 부채까지 점검해줘"},
+    {"locale": "ko", "text": "비개발자도 보는 로컬 품질 대시보드를 열어줘"},
+    {"locale": "en", "text": "Attach SEI to this local project and interview me first."},
+    {"locale": "en", "text": "Map the user journeys and inspect hidden fallback risks."},
+    {"locale": "en", "text": "Open a plain-language local assurance dashboard."}
+  ],
+  "anti_triggers": [
+    {"locale": "ko", "text": "지금 바로 프로덕션에 배포해줘"},
+    {"locale": "ko", "text": "인터뷰 없이 모든 버그를 확정해줘"},
+    {"locale": "en", "text": "Upload the private source tree to a hosted scanner."},
+    {"locale": "en", "text": "Guarantee that this repository has no bugs."}
+  ],
+  "required_inputs": [
+    {
+      "name": "project_folder",
+      "type": "path",
+      "description": "Existing local software project folder."
+    }
+  ],
+  "optional_inputs": [
+    {"name": "interview_answers", "type": "file"},
+    {"name": "accountable_owner", "type": "string"},
+    {"name": "llm_configuration", "type": "object"}
+  ],
+  "required_plugins": [],
+  "entrypoints": {
+    "canonical_command": "/sei",
+    "agent": "AGENTS.md",
+    "terminal": "sei"
+  },
+  "risk_profile": {
+    "tier": "medium",
+    "capabilities_at_risk": ["file_write", "external_tool"]
+  },
+  "approval_requirements": [
+    "Ask before enabling an LLM or network call.",
+    "Ask before replacing existing Git hooks.",
+    "Never infer code mutation or deployment authority from inspection."
+  ],
+  "memory_behavior": {
+    "reads": "project",
+    "writes": "project",
+    "exports_to_cloud": false
+  },
+  "cloud_delegation_policy": "never",
+  "cost_hints": {"model_calls": "low", "paid_api": false},
+  "produces": [
+    {"kind": "assurance_dashboard", "path_hint": "http://127.0.0.1:<port>/<token>"},
+    {"kind": "inspection_report", "path_hint": ".sei/reports/latest-inspection.md"},
+    {"kind": "user_flow_map", "path_hint": ".sei/registry/flows.jsonl"}
+  ],
+  "consumes": [
+    {"kind": "local_project", "required": true},
+    {"kind": "operator_interview", "required": true}
+  ],
+  "known_failure_cases": [
+    "Static inspection cannot prove runtime or user outcomes.",
+    "Large repositories may reach the bounded scan budget.",
+    "A configured LLM can propose hypotheses but cannot confirm defects."
+  ],
+  "locale_coverage": {
+    "primary": "ko",
+    "ready": ["ko", "en", "ja", "zh"],
+    "partial": []
+  },
+  "routing_status": "candidate",
+  "routing_status_reason": "Public alpha; deterministic inspection still requires independent runtime and user-outcome evidence."
+}

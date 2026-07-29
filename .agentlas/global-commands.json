@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0",
+  "packageId": "agentlas-sei",
+  "canonicalCommand": "/sei",
+  "commands": [
+    {
+      "runtime": "claude-code",
+      "command": "/sei",
+      "adapterPath": ".claude/commands/sei.md",
+      "globalInstallPath": "~/.claude/commands/sei.md",
+      "scope": "global",
+      "status": "native-slash-command"
+    },
+    {
+      "runtime": "codex",
+      "command": "$sei",
+      "adapterPath": "plugins/agentlas-sei/skills/sei/SKILL.md",
+      "globalInstallPath": "codex plugin marketplace add https://github.com/agentlas-ai/agentlas-sei.git && codex plugin add agentlas-sei@agentlas-sei",
+      "scope": "plugin",
+      "status": "plugin-skill",
+      "notes": "Codex 0.117+ removed custom slash prompts; typed /sei remains a semantic alias through AGENTS.md."
+    },
+    {
+      "runtime": "gemini-cli",
+      "command": "/sei",
+      "adapterPath": "gemini/extension/commands/sei.toml",
+      "globalInstallPath": "~/.gemini/commands/sei.toml",
+      "scope": "global",
+      "status": "extension-custom-command"
+    },
+    {
+      "runtime": "antigravity",
+      "command": "/sei",
+      "adapterPath": "antigravity/workflows/sei.md",
+      "globalInstallPath": "~/.gemini/antigravity/global_workflows/sei.md",
+      "scope": "global",
+      "status": "global-workflow"
+    },
+    {
+      "runtime": "agents-md",
+      "command": "/sei",
+      "adapterPath": "AGENTS.md",
+      "scope": "project",
+      "status": "semantic-command-alias"
+    },
+    {
+      "runtime": "terminal",
+      "command": "sei",
+      "adapterPath": "src/agentlas_sei/cli.py",
+      "scope": "terminal",
+      "status": "shell-command"
+    }
+  ],
+  "postCreationUserMessage": {
+    "required": true,
+    "template": "Claude/Gemini/Antigravity: /sei <folder>; Codex 0.117+: $sei <folder>; terminal: sei <folder>."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "name": "SEI",
+  "packageHash": "sha256:d83bc7cac55acbc242f7a97d705b423dacfadd5fb86a9efb19372d12680f1077",
+  "packageHashVersion": "agentlas-package-hash/v2",
+  "runtimeBundleVersion": "1.0",
+  "entry": "AGENTS.md",
+  "skills": ["sei"],
+  "toolPermissions": {
+    "network": "ask",
+    "shell": "ask",
+    "fileRead": "manifest-allowlist"
+  },
+  "memoryPolicy": {"writeBack": "ask", "publicCopy": "reset"},
+  "memory": [".agentlas/agent-card.json", ".agentlas/memory-map.json"],
+  "allowRead": [
+    "AGENTS.md",
+    "agent.md",
+    "src/agentlas_sei/**",
+    ".agents/skills/sei/SKILL.md",
+    ".agentlas/*.json"
+  ],
+  "denyRead": [
+    ".env",
+    ".env.*",
+    "**/secrets/**",
+    "**/credentials/**",
+    "**/*token*",
+    "**/*secret*",
+    "**/.sei/**"
+  ],
+  "publicExportPolicy": "clean-copy",
+  "requiredRuntime": ["python>=3.11"],
+  "license": "source-download-allowed",
+  "createdBy": "agentlas-packager",
+  "mcpPolicy": {
+    "ref": ".agentlas/mcp-policy.json",
+    "resolution": "system-global-first"
+  }
+}

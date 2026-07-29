@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agentlas-sei"
+version = "0.3.0"
+description = "Local-first System Epistemic Integrity agent for existing software projects"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [
+  {name = "Agentlas", email = "appbridge@appbridge.co.kr"}
+]
+keywords = [
+  "software-assurance",
+  "technical-debt",
+  "cognitive-debt",
+  "llm-agent",
+  "code-analysis"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Quality Assurance"
+]
+dependencies = []
+
+[project.scripts]
+sei = "agentlas_sei.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentlas_sei"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/agentlas_sei",
+  "/README.md",
+  "/CHANGELOG.md",
+  "/LICENSE",
+  "/pyproject.toml"
+]
+exclude = ["/.gitignore"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

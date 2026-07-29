@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "agentlas.memory-map.v1",
+  "projectId": "agentlas-sei",
+  "surface": "public-agent-package",
+  "canonicalMemoryRoots": {
+    "publicStable": "AGENTS.md",
+    "privateRuns": "<target-project>/.sei/"
+  },
+  "writeOwners": {
+    "publicStable": "package-maintainer",
+    "privateRuns": "target-project-operator"
+  },
+  "promotionPath": [
+    "local observation",
+    "redacted candidate",
+    "owner review",
+    "versioned public rule"
+  ],
+  "trustLabels": ["candidate", "accepted-intent", "supported", "refuted", "unknown"],
+  "exclude": [
+    "source code",
+    "raw interview transcripts",
+    "private paths",
+    "credentials",
+    "personal data",
+    "hidden reasoning"
+  ]
+}

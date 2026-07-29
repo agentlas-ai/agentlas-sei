@@ -1,0 +1,9 @@
+description = "Interview, map, inspect, and visualize a local software project"
+prompt = """
+Run `sei {{args}}` when a project folder is supplied, otherwise run `sei .`.
+Complete the built-in interview before inspection. Return the tokenized local
+dashboard URL. Keep candidates separate from confirmed bugs and do not send
+source, paths, interview answers, credentials, or .sei state externally.
+For a dashboard-only request, run `sei dashboard <project-folder> --lang auto`.
+Supported language overrides are ko, en, ja, and zh.
+"""

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "name": "SEI",
+  "slug": "agentlas-sei",
+  "summary": "Interview a software project, map its user flows, inspect code-risk candidates, and explain the result in a local dashboard.",
+  "capabilities": [
+    "interview_product_intent",
+    "map_user_flows",
+    "inspect_code_risks",
+    "visualize_assurance_state",
+    "gate_risky_changes"
+  ],
+  "entrypoints": {
+    "canonical_command": "/sei",
+    "agent": "AGENTS.md",
+    "terminal": "sei"
+  }
+}
