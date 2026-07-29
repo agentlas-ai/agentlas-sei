@@ -2,6 +2,8 @@
 
 ### Find the gap between code that passes and products that work.
 
+![Agentlas SEI English dashboard showing issue-to-flow diagnosis](assets/blackturtle-sei-dashboard-en.png)
+
 Agentlas SEI is a local-first assurance agent for existing software projects.
 It maps the product from large user journeys down to small observable steps,
 connects those steps to code and evidence, and shows where the team knows,

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0",
   "name": "SEI",
-  "packageHash": "sha256:d83bc7cac55acbc242f7a97d705b423dacfadd5fb86a9efb19372d12680f1077",
+  "packageHash": "sha256:367bf5ab6ab694176b8f37ebfd5c9a7d7c4b6476b9850f0dd9a20d4c555fe837",
   "packageHashVersion": "agentlas-package-hash/v2",
   "runtimeBundleVersion": "1.0",
   "entry": "AGENTS.md",
